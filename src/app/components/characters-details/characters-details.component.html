@@ -1,0 +1,16 @@
+<div class="character-container" *ngIf="character">
+  <h2 class="name">{{character.name}}</h2>
+  <div class="birthday-info">
+    <p>Born in: {{character.homeworld}}</p>
+  </div>
+  <div class="info">
+    <p>Eye color: <span>{{character.eyeColor}}</span></p>
+    <p>Height: <span>{{character.height}}</span> cms</p>
+    <p>Weight: <span>{{character.mass}}</span></p>
+    <p>Gender: <span>{{character.gender}}</span></p>
+  </div>
+  <div class="movies">
+    <p>Appears in:</p>
+    <mat-chip *ngFor="let movie of character.films">{{movie}}</mat-chip>
+  </div>
+</div>

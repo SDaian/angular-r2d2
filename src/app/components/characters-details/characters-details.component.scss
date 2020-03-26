@@ -1,0 +1,38 @@
+.character-container{
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 0 5px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  min-height: 220px;
+  .name {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 5px 0;
+    margin-bottom: 15px;
+  }
+  .info, .birthday-info {
+    font-size: 14px;
+    color: #666666;
+    margin-top: 5px;
+    span{
+      color: #333333;
+    }
+  }
+  .info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    > *:not(:last-child){
+      margin-bottom: 5px;
+      margin-right: 10px;
+    }
+  }
+  .movies {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: #666666;
+    margin-top: 5px;
+  }
+}
