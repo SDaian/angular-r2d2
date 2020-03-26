@@ -1,0 +1,95 @@
+.filters {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  p {
+    font-weight: 500;
+    width: 100%
+  }
+  width: 100%;
+  > mat-form-field {
+    margin-right: 10px;
+  }
+}
+
+.character-list{
+  max-width: 960px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 auto;
+  .character-container{
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 0 5px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    min-height: 220px;
+    .name {
+      font-size: 18px;
+      font-weight: 500;
+      margin: 5px 0;
+      margin-bottom: 15px;
+    }
+    .info, .birthday-info {
+      font-size: 14px;
+      color: #666666;
+      margin-top: 5px;
+      span{
+        color: #333333;
+      }
+    }
+    .info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      > *:not(:last-child){
+        margin-bottom: 5px;
+        margin-right: 10px;
+      }
+    }
+    .movies {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: #666666;
+      margin-top: 5px;
+      > p {
+        margin-bottom: 10px;
+        width:100%;
+      }
+    }
+  }
+  .pagination{
+    width: 100%;
+    pagination-controls {
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .character-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
+  .character-container {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .character-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
+  .character-container {
+    width: 30%;
+  }
+}

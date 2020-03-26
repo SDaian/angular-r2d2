@@ -1,0 +1,52 @@
+
+<div class="filters">
+  <a mat-button (click)="goBack()"><- Go Back</a>
+  <p>Filters</p>
+  <mat-form-field>
+    <mat-label>Gender</mat-label>
+    <mat-select (selectionChange)="selectGender($event.value)">
+      <mat-option *ngFor="let gender of genders" [value]="gender.value">
+        {{gender.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Eye Color</mat-label>
+    <mat-select (selectionChange)="selectEyeColor($event.value)">
+      <mat-option *ngFor="let eyeColor of eyeColors" [value]="eyeColor.value">
+        {{eyeColor.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Movie</mat-label>
+    <mat-select (selectionChange)="selectMovie($event.value)">
+      <mat-option *ngFor="let movie of movies" [value]="movie.url">
+        {{movie.title}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="character-list" *ngIf="characters">
+  <ng-container *ngFor="let character of characters 
+    | customFilter:filterargs | paginate: { itemsPerPage: 10, currentPage: p } ">
+    <div class="character-container">
+      <h2 class="name">{{character.name}}</h2>
+      <div class="info">
+        <p>Eye color: <span>{{character.eyeColor | titlecase}}</span></p>
+        <p>Height: <span>{{character.height}}</span> cms</p>
+        <p>Weight: <span>{{character.mass}}</span></p>
+        <p>Gender: <span>{{character.gender | titlecase}}</span></p>
+      </div>
+      <div class="movies">
+        <p>Appears in:</p>
+        <mat-chip-list>
+          <mat-chip *ngFor="let movie of character.films">{{getMovieName(movie)}}</mat-chip>
+        </mat-chip-list>
+      </div>
+    </div>
+  </ng-container>
+  <div class="pagination">
+    <pagination-controls *ngIf="characters.length" (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
