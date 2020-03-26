@@ -1,0 +1,23 @@
+<div class="movies-list">
+  <ng-container *ngFor="let movie of movies" >
+    <div class="movies-container">
+      <img src="assets/img/star-wars.png">
+      <div class="summary">
+        <div class="info">
+          <p>Episode {{movie.episodeId}}</p>
+          <p>{{movie.director}}</p>
+        </div>
+        <h2 class="title" (click)="showCrawl(movie.openingCrawl)">{{movie.title}}</h2>
+        <button mat-raised-button color="primary" (click)="goToCharacters(movie.url)">Show characters</button>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<div id="titles" *ngIf="openedCrawl" (click)="openedCrawl = false;">
+  <div id="titlecontent" >
+
+  <p>{{openingCrawl}}</p>
+
+  </div>
+</div>
