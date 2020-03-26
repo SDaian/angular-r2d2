@@ -1,5 +1,11 @@
 # AngularR2d2
 
+## Some images about it.
+
+![Captura de Pantalla 2020-03-26 a la(s) 14 17 43](https://user-images.githubusercontent.com/14813235/77676330-efe2f100-6f6c-11ea-9392-234a94462ec3.png)
+
+![Captura de Pantalla 2020-03-26 a la(s) 14 23 31](https://user-images.githubusercontent.com/14813235/77676677-67188500-6f6d-11ea-967a-3d8cad74be4f.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
 ## Development server
